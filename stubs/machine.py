@@ -6,7 +6,8 @@ Module: 'machine' on esp32 1.14.0
 
 
 class ADC:
-    ''
+    """The ADC class provides an interface to analog-to-digital convertors, and represents a single endpoint that can sample a continuous voltage and convert it to a discretised value.
+    """
     ATTN_0DB = 0
     ATTN_11DB = 3
     ATTN_2_5DB = 1
@@ -23,17 +24,21 @@ class ADC:
             id (Int | Pin)
         """
 
-    def atten():
-        pass
+    def atten(self, attenuation):
+        """This method allows for the setting of the amount of attenuation on the input of the ADC. This allows for a wider possible input voltage range, at the cost of accuracy (the same number of bits now represents a wider range). 
+        """
 
-    def read():
-        pass
+    def width(self, width):
+        """This method allows for the setting of the number of bits to be utilised and returned during ADC reads.
+        """
 
     def read_u16():
         """Take an analog reading and return an integer in the range 0-65535. The return value represents the raw reading taken by the ADC, scaled such that the minimum value is 0 and the maximum value is 65535.
         """
 
-    def width():
+    def read() -> float:
+        """Read value using the newly configured attenuation and width.
+        """
         pass
 
 
@@ -96,17 +101,23 @@ PIN_WAKE = 2
 
 
 class PWM:
+    """PWM can be enabled on all output-enabled pins. The base frequency can range from 1Hz to 40MHz but there is a tradeoff; as the base frequency increases the duty resolution decreases. See LED Control for more details. Currently the duty cycle has to be in the range of 0-1023.
+    """
+
     def __init__(self, id, freq=None, duty=512) -> None:
         pass
 
     def deinit():
-        pass
+        """This will turn off PWM on the pin
+        """
 
-    def duty():
-        pass
+    def duty(duty: int = None) -> int:
+        """Set the duty cycle (0-1023)
+        """
 
-    def freq():
-        pass
+    def freq(freq: int = None) -> int:
+        """Set the frequency
+        """
 
     def init():
         pass

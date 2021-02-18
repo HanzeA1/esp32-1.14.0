@@ -83,5 +83,8 @@ class WLAN:
         """
 
 
-def phy_mode():
-    pass
+def phy_mode(mode=None):
+    """Get or set the PHY mode.
+
+        If the mode parameter is provided, sets the mode to its value. If the function is called without parameters, returns the current mode.
+    """
