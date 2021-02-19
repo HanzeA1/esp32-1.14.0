@@ -14,3 +14,7 @@ Take a look at the `IOT-ESP32-Workspace` repo if you want an example project for
 ### Network
 
 * WLAN
+
+## Other modules
+
+* socket
