@@ -103,6 +103,7 @@ class MQTTClient:
 class MQTTException:
     ''
 def hexlify():
+    """Convert binary data to hexadecimal representation. Returns bytes string."""
     pass
 
 socket = None
