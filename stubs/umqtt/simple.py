@@ -37,9 +37,9 @@ class MQTTClient:
         pass
 
     def check_msg(self):
-        pass
         """Check whether there is a pending message from the sever.
         If true will work like wait_msg(), else will return immediately"""
+        pass
 
     def connect(self, clean_session=True):
         """Connect to a server
