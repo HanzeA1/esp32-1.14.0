@@ -5,6 +5,9 @@ Module: 'network' on esp32 1.14.0
 # Stubber: 1.3.2
 
 
+import string
+
+
 AP_IF = 1
 AUTH_MAX = 6
 AUTH_OPEN = 0
@@ -62,7 +65,7 @@ class WLAN:
         """Disconnect from the currently connected wireless network.
         """
 
-    def scan(self):
+    def scan(self) -> list[tuple[bytes, bytes, int, int, int, int]]:
         """Scan for the available wireless networks.
         """
 
