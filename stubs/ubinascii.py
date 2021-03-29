@@ -17,12 +17,13 @@ def crc32():
     pass
 
 
-def hexlify(data: bytes) -> bytes:
+def hexlify(data: bytes, sep: str = '') -> bytes:
     """Convert the bytes in the data object to a hexadecimal representation. Returns a bytes object.
 
         If the additional argument sep is supplied it is used as a separator between hexadecimal values.
     """
 
 
-def unhexlify():
-    pass
+def unhexlify(data) -> bytes:
+    """Convert hexadecimal data to binary representation. Returns bytes string. (i.e. inverse of hexlify)
+    """
