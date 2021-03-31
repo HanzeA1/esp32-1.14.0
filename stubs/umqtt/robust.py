@@ -4,6 +4,7 @@ Module: 'umqtt.robust' on esp32 1.14.0
 # MCU: (sysname='esp32', nodename='esp32', release='1.14.0', version='v1.14 on 2021-02-02', machine='ESP32 module with ESP32')
 # Stubber: 1.3.2
 
+
 class MQTTClient:
     """The MQTTClient class provides a robust MQTT client based on the simple version.
     It features the same functions as the simple version, with a few additions
@@ -25,13 +26,14 @@ class MQTTClient:
         """
     DEBUG = None
     DELAY = 2
+
     def _recv_len(self):
         """Returns received length"""
         pass
 
     def _send_str(self, s: str):
         """Send string to server
-        
+
         Args:
             s: string to send
         """
@@ -49,7 +51,7 @@ class MQTTClient:
 
     def delay(self, i):
         """Delays program
-        
+
         Args:
             i: amount of seconds to delay for
         """
@@ -68,8 +70,19 @@ class MQTTClient:
         Message is processed by wait_msg()"""
         pass
 
-    publish = None
+    def publish(self, topic: str, msg: str, retain=False, qos=0):
+        """Publish message
+
+        Args:
+            topic: topic to publish in
+            msg: message to publish
+            retain: whether the broker has to retain the message, defaults to False
+            qos: defines quality of service, defaults to 0
+        """
+        pass
+
     reconnect = None
+
     def set_callback(self, f: function):
         """Set callback function to process messages
 
@@ -80,7 +93,7 @@ class MQTTClient:
 
     def set_last_will(self, topic, msg, retain=False, qos=0):
         """Sets last will message
-        
+
         Args:
             topic: topic to publish in
             msg: message to publish
@@ -98,5 +111,7 @@ class MQTTClient:
         pass
 
     wait_msg = None
+
+
 simple = None
 utime = None
