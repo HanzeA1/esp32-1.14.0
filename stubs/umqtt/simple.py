@@ -4,6 +4,7 @@ Module: 'umqtt.simple' on esp32 1.14.0
 # MCU: (sysname='esp32', nodename='esp32', release='1.14.0', version='v1.14 on 2021-02-02', machine='ESP32 module with ESP32')
 # Stubber: 1.3.2
 
+
 class MQTTClient:
     """The MQTTClient class provides a simple MQTT client.
     It is designed to be memory efficient, and can be used for subscriptions and publications.
@@ -30,7 +31,7 @@ class MQTTClient:
 
     def _send_str(self, s: str):
         """Send string to server
-        
+
         Args:
             s: string to send
         """
@@ -76,7 +77,7 @@ class MQTTClient:
 
     def set_last_will(self, topic, msg, retain=False, qos=0):
         """Sets last will message
-        
+
         Args:
             topic: topic to publish in
             msg: message to publish
@@ -100,11 +101,15 @@ class MQTTClient:
         pass
 
 
-class MQTTException:
-    ''
+class MQTTException(Exception):
+    def __init__(self, *args: object) -> None:
+        super().__init__(*args)
+
+
 def hexlify():
     """Convert binary data to hexadecimal representation. Returns bytes string."""
     pass
+
 
 socket = None
 struct = None
